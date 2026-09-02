@@ -89,41 +89,126 @@ footer{margin-top:30px;background:#0e1713;color:#cbd5d0;text-align:center;paddin
 <footer>© আমার অভিযোগ · জনতার কথা, জনসমক্ষে</footer>
 
 <script>
-const CATS=['সব','ছিনতাই','হয়রানি','চুরি','প্রতারণা','মারামারি','অন্যান্য'];
-let selected='সব', data=[];
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyq23QqHlVlBvkvtQzfUnHGhROGFbSg9WKycJgo-XTAXN6PMLQ66xHzBUBlvkQ96u-e1g/exec";
 
-function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
-function renderFilters(){
-  document.getElementById('filters').innerHTML=CATS.map(c=>`<button class="chip ${c===selected?'active':''}" onclick="selected='${c}';renderFilters();renderCards()">${c}</button>`).join('');
+const CATS = ['সব', 'ছিনতাই', 'হয়রানি', 'চুরি', 'প্রতারণা', 'মারামারি', 'অন্যান্য'];
+let selected = 'সব', data = [];
+
+function esc(s) {
+  return String(s || '').replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m]));
 }
-function renderCards(){
-  const list=selected==='সব'?data:data.filter(x=>x.category===selected);
-  const el=document.getElementById('cards');
-  if(!list.length){el.innerHTML='<div class="empty">এখনো কোনো অভিযোগ পাওয়া যায়নি।</div>';return}
-  el.innerHTML=list.slice(0,30).map(x=>`<article class="card"><span class="tag">${esc(x.category)}</span><h4>${esc(x.title)}</h4><p>${esc(x.district)} · ${esc(x.date)}<br>${esc(x.details)}${x.damaged?`<br><b>নষ্ট/হারানো:</b> ${esc(x.damaged)}`:''}${Number(x.loss)>0?`<br><b>আর্থিক ক্ষতি:</b> ৳ ${Number(x.loss).toLocaleString('bn-BD')}`:''}</p></article>`).join('');
+
+function renderFilters() {
+  const filtersEl = document.getElementById('filters');
+  if (filtersEl) {
+    filtersEl.innerHTML = CATS.map(c => 
+      `<button class="chip ${c === selected ? 'active' : ''}" onclick="selected='${c}'; renderCards(); renderFilters();">${c}</button>`
+    ).join('');
+  }
 }
-function load(){
-  google.script.run.withSuccessHandler(r=>{
-    const result=r&&Array.isArray(r.items)?r:{items:Array.isArray(r)?r:[],totalComplaints:0,totalLoss:0,lossReports:0};
-    data=result.items; document.getElementById('totalComplaints').textContent=Number(result.totalComplaints||0).toLocaleString('bn-BD');
-    document.getElementById('totalLoss').textContent='৳ '+Number(result.totalLoss||0).toLocaleString('bn-BD');
-    document.getElementById('lossReports').textContent=Number(result.lossReports||0).toLocaleString('bn-BD');
-    renderFilters();renderCards();
-  }).withFailureHandler(()=>{data=[];renderFilters();document.getElementById('cards').innerHTML='<div class="empty">ডাটা লোড করা যাচ্ছে না। কিছুক্ষণ পরে আবার চেষ্টা করুন।</div>'}).getComplaints();
+
+function renderCards() {
+  const list = selected === 'সব' ? data : data.filter(x => x.category === selected);
+  const el = document.getElementById('cards');
+  if (!el) return;
+  
+  if (!list.length) {
+    el.innerHTML = '<div class="empty">এখনো কোনো অভিযোগ পাওয়া যায়নি</div>';
+    return;
+  }
+  el.innerHTML = list.slice(0, 30).map(x => 
+    `<article class="card"><span class="tag">${esc(x.category)}</span><h4>${esc(x.title)}</h4><p>${esc(x.details)}</p></article>`
+  ).join('');
 }
-document.getElementById('form').addEventListener('submit',e=>{
+
+function load() {
+  fetch(SCRIPT_URL)
+    .then(res => res.json())
+    .then(r => {
+      const result = r && Array.isArray(r.items) ? r : { items: Array.isArray(r) ? r : [], totalComplaints: 0, totalloss: 0, lossReports: 0 };
+      data = result.items;
+      
+      const tc = document.getElementById('totalComplaints');
+      const tl = document.getElementById('totalloss');
+      const lr = document.getElementById('lossReports');
+      
+      if (tc) tc.textContent = Number(result.totalComplaints || 0).toLocaleString('bn-BD');
+      if (tl) tl.textContent = '৳ ' + Number(result.totalloss || 0).toLocaleString('bn-BD');
+      if (lr) lr.textContent = Number(result.lossReports || 0).toLocaleString('bn-BD');
+      
+      renderFilters();
+      renderCards();
+    })
+    .catch(() => {
+      data = [];
+      renderFilters();
+      const el = document.getElementById('cards');
+      if (el) el.innerHTML = '<div class="empty">ডেটা লোড করা যাচ্ছে না</div>';
+    });
+}
+
+document.getElementById('form').addEventListener('submit', e => {
   e.preventDefault();
-  const status=document.getElementById('status'), btn=document.getElementById('submit');
-  status.className='status'; status.textContent='জমা হচ্ছে...'; btn.disabled=true;
-  const payload={category:category.value.trim(),district:district.value.trim(),title:title.value.trim(),details:details.value.trim(),loss:loss.value.trim(),damaged:damaged.value.trim(),website:website.value};
-  google.script.run.withSuccessHandler(r=>{
-    btn.disabled=false;
-    if(r&&r.ok){status.className='status ok';status.textContent='অভিযোগ সফলভাবে জমা হয়েছে।';e.target.reset();load();}
-    else{status.className='status danger';status.textContent=(r&&r.message)||'জমা দেওয়া যায়নি।';}
-  }).withFailureHandler(()=>{btn.disabled=false;status.className='status danger';status.textContent='সার্ভারে সমস্যা হয়েছে। আবার চেষ্টা করুন।'}).submitComplaint(payload);
+  
+  const categoryEl = document.getElementById('category');
+  const districtEl = document.getElementById('district');
+  const titleEl = document.getElementById('title');
+  const detailsEl = document.getElementById('details');
+  const lossEl = document.getElementById('loss');
+  
+  const titleVal = titleEl ? titleEl.value.trim() : '';
+  const detailsVal = detailsEl ? detailsEl.value.trim() : '';
+  
+  const status = document.getElementById('status');
+  const btn = document.getElementById('submit');
+
+  if (!titleVal || !detailsVal) {
+    if (status) {
+      status.className = 'status danger';
+      status.textContent = 'অনুগ্রহ করে শিরোনাম ও বিস্তারিত জায়গায় সঠিক তথ্য লিখুন!';
+    }
+    return;
+  }
+
+  if (status) {
+    status.className = 'status'; 
+    status.textContent = 'জমা হচ্ছে...';
+  }
+  if (btn) btn.disabled = true;
+
+  const payload = {
+    category: categoryEl ? categoryEl.value.trim() : '',
+    district: districtEl ? districtEl.value.trim() : '',
+    title: titleVal,
+    details: detailsVal,
+    loss: lossEl ? lossEl.value.trim() : ''
+  };
+
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(() => {
+    if (btn) btn.disabled = false;
+    if (status) {
+      status.className = 'status ok';
+      status.textContent = 'অভিযোগ সফলভাবে জমা হয়েছে!';
+    }
+    e.target.reset();
+    load();
+  })
+  .catch(() => {
+    if (btn) btn.disabled = false;
+    if (status) {
+      status.className = 'status danger';
+      status.textContent = 'সার্ভারে সমস্যা হয়েছে! আবার চেষ্টা করুন।';
+    }
+  });
 });
-renderFilters();
-window.addEventListener('load',load);
+
+window.addEventListener('load', load);
 </script>
 </body>
 </html>
