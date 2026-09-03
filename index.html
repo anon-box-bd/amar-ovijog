@@ -3,211 +3,2408 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="জনতার কথা, জনসমক্ষে — নিরাপদে অভিযোগ জানান।">
+
+<!-- ================= GOOGLE SEO ================= -->
+
+<meta name="description" content="আমার অভিযোগ — জনতার কথা, জনসমক্ষে। এলাকার সমস্যা, অনিয়ম, প্রতারণা ও অন্যান্য অভিযোগ জানান এবং অভিযোগের সামগ্রিক পরিসংখ্যান ও আর্থিক ক্ষতির চিত্র দেখুন।">
+
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="googlebot" content="index, follow">
+
+<meta name="author" content="আমার অভিযোগ">
+
+<link rel="canonical" href="https://anon-box-bd.github.io/amar-ovijog/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://anon-box-bd.github.io/amar-ovijog/">
+<meta property="og:title" content="আমার অভিযোগ — আপনার কথা গুরুত্বপূর্ণ">
+<meta property="og:description" content="জনতার কথা, জনসমক্ষে — নিরাপদে অভিযোগ জানান।">
+<meta property="og:site_name" content="আমার অভিযোগ">
+
 <title>আমার অভিযোগ — আপনার কথা গুরুত্বপূর্ণ</title>
+
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap');
-:root{--green:#07543f;--green2:#0b6b50;--cream:#f7faf5;--gold:#c79521;--ink:#14231d;--muted:#708078;--line:#e2e9e4;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:"Noto Sans Bengali",sans-serif}
-header{position:sticky;top:0;z-index:20;background:rgba(247,250,245,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{max-width:1050px;margin:auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.brand{display:flex;align-items:center;gap:12px}.logo{width:52px;height:52px;border-radius:17px;background:var(--green);display:grid;place-items:center;box-shadow:0 10px 25px #07543f25}
-.logo svg{width:29px}.brand h1{font-size:23px;margin:0;font-weight:800}.brand small{display:block;color:#7c8782;font-size:12px;margin-top:1px}
-.btn{border:0;border-radius:14px;padding:13px 19px;background:var(--green);color:white;font:700 14px inherit;cursor:pointer;box-shadow:0 8px 20px #07543f22}.btn:hover{background:var(--green2)}
-.hero{max-width:1050px;margin:auto;padding:55px 20px 25px;display:grid;grid-template-columns:1.05fr .95fr;gap:35px;align-items:center}
-.eyebrow{color:var(--gold);font-weight:800;font-size:14px}.hero h2{font-size:clamp(38px,6vw,65px);line-height:1.12;margin:12px 0 16px;letter-spacing:-1px}.hero p{color:#65726c;font-size:16px;line-height:1.9;max-width:560px}
-.hero-art{min-height:330px;border-radius:35px;background:linear-gradient(145deg,#eef5ef,#dcebe1);position:relative;overflow:hidden;display:grid;place-items:center}
-.paper{width:72%;height:78%;background:white;border-radius:24px;transform:rotate(4deg);box-shadow:0 25px 45px #34544322;padding:45px 35px;position:relative}
-.paper h3{font-size:35px;margin:0 0 25px}.line{height:13px;background:#edf1ef;border-radius:99px;margin:18px 0}.line:nth-child(3){width:88%}.line:nth-child(4){width:72%}.check{position:absolute;right:20px;bottom:20px;width:68px;height:68px;border:4px solid var(--green);border-radius:50%;display:grid;place-items:center;color:var(--green);font-size:35px;font-weight:900}
-.float{position:absolute;background:white;border:1px solid #e2e8e3;border-radius:20px;padding:15px 20px;box-shadow:0 15px 35px #294a3820}.float b{display:block;font-size:19px}.f1{left:10px;top:45px}.f2{right:8px;bottom:38px}
-section{max-width:1050px;margin:auto;padding:38px 20px}.section-title{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:22px}.section-title h3{font-size:34px;margin:0}.filters{display:flex;flex-wrap:wrap;gap:10px;margin:15px 0 25px}.chip{padding:10px 17px;border:1px solid #dce4df;background:white;border-radius:999px;cursor:pointer;font:500 14px inherit}.chip.active{background:var(--green);color:white;border-color:var(--green)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:white;border:1px solid var(--line);border-radius:20px;padding:20px;min-height:145px;box-shadow:0 5px 18px #1e352b08}.tag{display:inline-block;padding:5px 9px;border-radius:8px;background:#eef6f1;color:var(--green);font-size:12px;font-weight:700}.card h4{margin:13px 0 8px;font-size:18px}.card p{margin:0;color:#76827c;font-size:13px;line-height:1.7}
-.empty{border:1px dashed #cfd9d3;background:white;border-radius:22px;padding:48px 20px;text-align:center;color:#7b8681}
-.form-wrap{max-width:700px;background:white;border:1px solid var(--line);border-radius:26px;padding:25px;box-shadow:0 12px 30px #1e352b0b}.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{margin-bottom:15px}.field label{display:block;font-weight:700;font-size:14px;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;border:1px solid #dbe3de;border-radius:13px;padding:12px 13px;font:inherit;outline:none;background:#fcfdfc}.field textarea{min-height:145px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px #07543f12}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 22px}.stat{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 8px 22px #1e352b08}.stat b{display:block;font-size:26px;color:var(--green);margin-top:5px}.stat small{color:#68766f}.loss-note{font-size:12px;color:#68766f;margin-top:6px}.notice{background:#f4f8f5;border-radius:14px;padding:12px 14px;color:#68766f;font-size:12px;line-height:1.7;margin-bottom:17px}.status{margin-top:14px;font-weight:700}.danger{color:#a23b2e}.ok{color:var(--green)}
-footer{margin-top:30px;background:#0e1713;color:#cbd5d0;text-align:center;padding:30px 20px;font-size:13px}
-.hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
-@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:35px}.hero-art{min-height:285px}.cards{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.nav{padding:11px 14px}.brand h1{font-size:19px}.logo{width:45px;height:45px}.nav .btn{padding:10px 13px}.hero h2{font-size:42px}.section-title h3{font-size:28px}}
+
+:root{
+  --green:#07543f;
+  --green2:#0b6b50;
+  --cream:#f7faf5;
+  --gold:#c79521;
+  --ink:#14231d;
+  --muted:#708078;
+  --line:#e2e9e4;
+  --white:#fff;
+  --danger:#a23b2e;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:"Noto Sans Bengali",sans-serif;
+}
+
+button,
+input,
+textarea,
+select{
+  font-family:inherit;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(247,250,245,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  max-width:1050px;
+  margin:auto;
+  padding:15px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo{
+  width:52px;
+  height:52px;
+  border-radius:17px;
+  background:var(--green);
+  display:grid;
+  place-items:center;
+  box-shadow:0 10px 25px #07543f25;
+}
+
+.logo svg{
+  width:29px;
+}
+
+.brand h1{
+  font-size:23px;
+  margin:0;
+  font-weight:800;
+}
+
+.brand small{
+  display:block;
+  color:#7c8782;
+  font-size:12px;
+  margin-top:1px;
+}
+
+.btn{
+  border:0;
+  border-radius:14px;
+  padding:13px 19px;
+  background:var(--green);
+  color:white;
+  font:700 14px inherit;
+  cursor:pointer;
+  box-shadow:0 8px 20px #07543f22;
+  transition:.2s;
+}
+
+.btn:hover{
+  background:var(--green2);
+  transform:translateY(-1px);
+}
+
+.btn:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+  transform:none;
+}
+
+.hero{
+  max-width:1050px;
+  margin:auto;
+  padding:55px 20px 25px;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:35px;
+  align-items:center;
+}
+
+.eyebrow{
+  color:var(--gold);
+  font-weight:800;
+  font-size:14px;
+}
+
+.hero h2{
+  font-size:clamp(38px,6vw,65px);
+  line-height:1.12;
+  margin:12px 0 16px;
+  letter-spacing:-1px;
+}
+
+.hero p{
+  color:#65726c;
+  font-size:16px;
+  line-height:1.9;
+  max-width:560px;
+}
+
+.hero-art{
+  min-height:330px;
+  border-radius:35px;
+  background:linear-gradient(145deg,#eef5ef,#dcebe1);
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+}
+
+.paper{
+  width:72%;
+  height:78%;
+  background:white;
+  border-radius:24px;
+  transform:rotate(4deg);
+  box-shadow:0 25px 45px #34544322;
+  padding:45px 35px;
+  position:relative;
+}
+
+.paper h3{
+  font-size:35px;
+  margin:0 0 25px;
+}
+
+.line{
+  height:13px;
+  background:#edf1ef;
+  border-radius:99px;
+  margin:18px 0;
+}
+
+.line:nth-child(3){
+  width:88%;
+}
+
+.line:nth-child(4){
+  width:72%;
+}
+
+.check{
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  width:68px;
+  height:68px;
+  border:4px solid var(--green);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:var(--green);
+  font-size:35px;
+  font-weight:900;
+}
+
+.float{
+  position:absolute;
+  background:white;
+  border:1px solid #e2e8e3;
+  border-radius:20px;
+  padding:15px 20px;
+  box-shadow:0 15px 35px #294a3820;
+}
+
+.float b{
+  display:block;
+  font-size:19px;
+}
+
+.f1{
+  left:10px;
+  top:45px;
+}
+
+.f2{
+  right:8px;
+  bottom:38px;
+}
+
+section{
+  max-width:1050px;
+  margin:auto;
+  padding:38px 20px;
+}
+
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:15px;
+  margin-bottom:22px;
+}
+
+.section-title h3{
+  font-size:34px;
+  margin:0;
+}
+
+/* ================= STATS ================= */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:0 0 10px;
+}
+
+.stat{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 8px 22px #1e352b08;
+}
+
+.stat b{
+  display:block;
+  font-size:26px;
+  color:var(--green);
+  margin-top:5px;
+}
+
+.stat small{
+  color:#68766f;
+}
+
+.stat-loss b{
+  color:#9a6b00;
+}
+
+.stat-note{
+  font-size:12px;
+  color:#7a857f;
+  margin-top:5px;
+}
+
+/* ================= SUMMARY ================= */
+
+.summary-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.summary-card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:19px;
+  box-shadow:0 8px 22px #1e352b08;
+}
+
+.summary-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.summary-tag{
+  display:inline-block;
+  padding:6px 10px;
+  background:#eef6f1;
+  color:var(--green);
+  border-radius:9px;
+  font-size:13px;
+  font-weight:800;
+}
+
+.summary-percent{
+  color:var(--green);
+  font-weight:800;
+  font-size:17px;
+}
+
+.summary-count{
+  color:#65726c;
+  font-size:13px;
+  margin-bottom:9px;
+}
+
+.progress{
+  height:9px;
+  background:#edf2ee;
+  border-radius:99px;
+  overflow:hidden;
+  margin-bottom:13px;
+}
+
+.progress span{
+  display:block;
+  height:100%;
+  width:0;
+  background:var(--green);
+  border-radius:99px;
+  transition:width .7s ease;
+}
+
+.summary-loss{
+  color:#6b7771;
+  font-size:12px;
+}
+
+.summary-loss strong{
+  color:#8b640b;
+  font-size:14px;
+}
+
+/* ================= FILTER ================= */
+
+.filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:15px 0 25px;
+}
+
+.chip{
+  padding:10px 17px;
+  border:1px solid #dce4df;
+  background:white;
+  border-radius:999px;
+  cursor:pointer;
+  font:500 14px inherit;
+  transition:.2s;
+}
+
+.chip:hover{
+  border-color:var(--green);
+}
+
+.chip.active{
+  background:var(--green);
+  color:white;
+  border-color:var(--green);
+}
+
+/* ================= CARDS ================= */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:20px;
+  min-height:170px;
+  box-shadow:0 5px 18px #1e352b08;
+}
+
+.tag{
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:8px;
+  background:#eef6f1;
+  color:var(--green);
+  font-size:12px;
+  font-weight:700;
+}
+
+.card h4{
+  margin:13px 0 8px;
+  font-size:18px;
+}
+
+.card p{
+  margin:0;
+  color:#76827c;
+  font-size:13px;
+  line-height:1.7;
+}
+
+.card-loss{
+  margin-top:14px;
+  padding-top:10px;
+  border-top:1px solid #edf1ee;
+  color:#8b640b;
+  font-size:12px;
+  font-weight:700;
+}
+
+.card-damaged{
+  margin-top:5px;
+  color:#7b8681;
+  font-size:11px;
+}
+
+.empty{
+  border:1px dashed #cfd9d3;
+  background:white;
+  border-radius:22px;
+  padding:48px 20px;
+  text-align:center;
+  color:#7b8681;
+  grid-column:1/-1;
+}
+
+/* ================= FORM ================= */
+
+.form-wrap{
+  max-width:700px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:26px;
+  padding:25px;
+  box-shadow:0 12px 30px #1e352b0b;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.field{
+  margin-bottom:15px;
+}
+
+.field label{
+  display:block;
+  font-weight:700;
+  font-size:14px;
+  margin-bottom:7px;
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  border:1px solid #dbe3de;
+  border-radius:13px;
+  padding:12px 13px;
+  font:inherit;
+  outline:none;
+  background:#fcfdfc;
+}
+
+.field textarea{
+  min-height:145px;
+  resize:vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:var(--green);
+  box-shadow:0 0 0 3px #07543f12;
+}
+
+.loss-note{
+  font-size:12px;
+  color:#68766f;
+  margin-top:6px;
+}
+
+.notice{
+  background:#f4f8f5;
+  border-radius:14px;
+  padding:12px 14px;
+  color:#68766f;
+  font-size:12px;
+  line-height:1.7;
+  margin-bottom:17px;
+}
+
+.status{
+  margin-top:14px;
+  font-weight:700;
+}
+
+.danger{
+  color:var(--danger);
+}
+
+.ok{
+  color:var(--green);
+}
+
+footer{
+  margin-top:30px;
+  background:#0e1713;
+  color:#cbd5d0;
+  text-align:center;
+  padding:30px 20px;
+  font-size:13px;
+}
+
+.hp{
+  position:absolute;
+  left:-9999px;
+  opacity:0;
+  height:0;
+  width:0;
+}
+
+/* ================= LOADING ================= */
+
+.loading-overlay{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:rgba(247,250,245,.97);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:opacity .35s ease,visibility .35s ease;
+}
+
+.loading-overlay.hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.loader-box{
+  text-align:center;
+  padding:30px;
+}
+
+.spinner{
+  width:55px;
+  height:55px;
+  border:5px solid #dfeae3;
+  border-top-color:var(--green);
+  border-radius:50%;
+  animation:spin .8s linear infinite;
+  margin:0 auto 18px;
+}
+
+.loader-box h3{
+  margin:0 0 5px;
+  color:var(--green);
+  font-size:20px;
+}
+
+.loader-box p{
+  margin:0;
+  color:#748079;
+  font-size:13px;
+}
+
+@keyframes spin{
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+/* ================= LIVE STATUS ================= */
+
+.live-status{
+  min-height:20px;
+  font-size:11px;
+  color:#7a857f;
+  margin-top:4px;
+}
+
+.live-dot{
+  display:inline-block;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#38a169;
+  margin-right:5px;
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{
+    opacity:.35
+  }
+  50%{
+    opacity:1
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:760px){
+
+  .hero{
+    grid-template-columns:1fr;
+    padding-top:35px;
+  }
+
+  .hero-art{
+    min-height:285px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .summary-grid{
+    grid-template-columns:1fr;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .nav{
+    padding:11px 14px;
+  }
+
+  .brand h1{
+    font-size:19px;
+  }
+
+  .logo{
+    width:45px;
+    height:45px;
+  }
+
+  .nav .btn{
+    padding:10px 13px;
+  }
+
+  .hero h2{
+    font-size:42px;
+  }
+
+  .section-title h3{
+    font-size:28px;
+  }
+
+  .paper{
+    padding:35px 25px;
+  }
+
+  .float{
+    padding:10px 14px;
+  }
+
+  .f1{
+    left:5px;
+  }
+
+  .f2{
+    right:5px;
+  }
+}
+
 </style>
 </head>
+
 <body>
-<header><div class="nav">
-  <div class="brand">
-    <div class="logo" aria-label="আমার অভিযোগ">
-      <svg viewBox="0 0 32 32" fill="none" stroke="#e9c55b" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M9 7v16M14 5v17M19 8v13M24 10v10M6 22l5-5 5 3 5-6 5 3"/>
-      </svg>
-    </div>
-    <div><h1>আমার অভিযোগ</h1><small>জনতার কথা, জনসমক্ষে</small></div>
+
+<!-- ================= LOADING SCREEN ================= -->
+
+<div class="loading-overlay" id="loadingOverlay">
+
+  <div class="loader-box">
+
+    <div class="spinner"></div>
+
+    <h3>তথ্য লোড হচ্ছে...</h3>
+
+    <p>
+      সর্বশেষ অভিযোগ ও ক্ষতির হিসাব প্রস্তুত করা হচ্ছে
+    </p>
+
   </div>
-  <button class="btn" onclick="document.getElementById('complaint').scrollIntoView()">অভিযোগ জানান ↗</button>
-</div></header>
+
+</div>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+  <div class="nav">
+
+    <div class="brand">
+
+      <div class="logo" aria-label="আমার অভিযোগ">
+
+        <svg
+          viewBox="0 0 32 32"
+          fill="none"
+          stroke="#e9c55b"
+          stroke-width="3.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+
+          <path d="M9 7v16M14 5v17M19 8v13M24 10v10M6 22l5-5 5 3 5-6 5 3"/>
+
+        </svg>
+
+      </div>
+
+      <div>
+
+        <h1>আমার অভিযোগ</h1>
+
+        <small>জনতার কথা, জনসমক্ষে</small>
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="btn"
+      onclick="document.getElementById('complaint').scrollIntoView()"
+    >
+      অভিযোগ জানান ↗
+    </button>
+
+  </div>
+
+</header>
+
 
 <main>
+
+
+<!-- ================= HERO ================= -->
+
 <section class="hero">
-  <div><div class="eyebrow">● আপনার কথা গুরুত্বপূর্ণ</div>
-    <h2>অভিযোগ জানান,<br>কথা বলুন নিশ্চিন্তে।</h2>
-    <p>আপনার এলাকার সমস্যা, অনিয়ম বা প্রতারণার বিষয়ে তথ্য দিন। অপ্রয়োজনীয় ব্যক্তিগত তথ্য আমরা চাই না।</p>
-    <button class="btn" onclick="document.getElementById('complaint').scrollIntoView()">অভিযোগ জমা দিন</button>
+
+  <div>
+
+    <div class="eyebrow">
+      ● আপনার কথা গুরুত্বপূর্ণ
+    </div>
+
+    <h2>
+      অভিযোগ জানান,<br>
+      কথা বলুন নিশ্চিন্তে।
+    </h2>
+
+    <p>
+      আপনার এলাকার সমস্যা, অনিয়ম বা প্রতারণার বিষয়ে তথ্য দিন।
+      অপ্রয়োজনীয় ব্যক্তিগত তথ্য আমরা চাই না।
+    </p>
+
+    <button
+      class="btn"
+      onclick="document.getElementById('complaint').scrollIntoView()"
+    >
+      অভিযোগ জমা দিন
+    </button>
+
   </div>
-  <div class="hero-art"><div class="paper"><h3>অভিযোগ</h3><div class="line"></div><div class="line"></div><div class="line"></div><div class="check">✓</div></div><div class="float f1"><small>ঢাকা</small><b>ছিনতাই</b></div><div class="float f2"><small>চট্টগ্রাম</small><b>প্রতারণা</b></div></div>
+
+
+  <div class="hero-art">
+
+    <div class="paper">
+
+      <h3>অভিযোগ</h3>
+
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+
+      <div class="check">✓</div>
+
+    </div>
+
+
+    <div class="float f1">
+
+      <small>ঢাকা</small>
+
+      <b>ছিনতাই</b>
+
+    </div>
+
+
+    <div class="float f2">
+
+      <small>চট্টগ্রাম</small>
+
+      <b>প্রতারণা</b>
+
+    </div>
+
+  </div>
+
 </section>
 
-<section id="overview"><div class="section-title"><div><div class="eyebrow">সামগ্রিক হিসাব</div><h3>অভিযোগ ও ক্ষতির চিত্র</h3></div></div>
+
+<!-- ================= OVERVIEW ================= -->
+
+<section id="overview">
+
+  <div class="section-title">
+
+    <div>
+
+      <div class="eyebrow">
+        সামগ্রিক হিসাব
+      </div>
+
+      <h3>
+        অভিযোগ ও ক্ষতির চিত্র
+      </h3>
+
+      <div
+        class="live-status"
+        id="liveStatus"
+      ></div>
+
+    </div>
+
+  </div>
+
+
   <div class="stats">
-    <div class="stat"><small>মোট অভিযোগ</small><b id="totalComplaints">০</b></div>
-    <div class="stat"><small>মোট আর্থিক ক্ষতি</small><b id="totalLoss">৳ ০</b></div>
-    <div class="stat"><small>ক্ষতি উল্লেখ করা অভিযোগ</small><b id="lossReports">০</b></div>
+
+    <div class="stat">
+
+      <small>মোট অভিযোগ</small>
+
+      <b id="totalComplaints">—</b>
+
+      <div class="stat-note">
+        সকল ধরনের অভিযোগ
+      </div>
+
+    </div>
+
+
+    <div class="stat stat-loss">
+
+      <small>মোট আর্থিক ক্ষতি</small>
+
+      <b id="totalLoss">৳ —</b>
+
+      <div class="stat-note">
+        সব অভিযোগ মিলিয়ে
+      </div>
+
+    </div>
+
+
+    <div class="stat">
+
+      <small>ক্ষতি উল্লেখ করা অভিযোগ</small>
+
+      <b id="lossReports">—</b>
+
+      <div class="stat-note">
+        যেসব অভিযোগে ক্ষতির পরিমাণ দেওয়া হয়েছে
+      </div>
+
+    </div>
+
   </div>
+
 </section>
 
-<section id="recent"><div class="section-title"><div><div class="eyebrow">সাম্প্রতিক</div><h3>মানুষ কী জানাচ্ছে</h3></div></div>
-  <div class="filters" id="filters"></div>
-  <div class="cards" id="cards"><div class="empty">অভিযোগগুলো লোড হচ্ছে...</div></div>
+
+<!-- ================= CATEGORY SUMMARY ================= -->
+
+<section id="summary">
+
+  <div class="section-title">
+
+    <div>
+
+      <div class="eyebrow">
+        ধরনভিত্তিক বিশ্লেষণ
+      </div>
+
+      <h3>
+        কোন ধরনের অভিযোগ কত?
+      </h3>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="summary-grid"
+    id="categorySummary"
+  >
+
+    <div class="empty">
+      তথ্য লোড হচ্ছে...
+    </div>
+
+  </div>
+
 </section>
 
-<section id="complaint"><div class="section-title"><div><div class="eyebrow">নিরাপদে জানান</div><h3>আপনার অভিযোগ</h3></div></div>
+
+<!-- ================= RECENT COMPLAINTS ================= -->
+
+<section id="recent">
+
+  <div class="section-title">
+
+    <div>
+
+      <div class="eyebrow">
+        সাম্প্রতিক
+      </div>
+
+      <h3>
+        মানুষ কী জানাচ্ছে
+      </h3>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="filters"
+    id="filters"
+  ></div>
+
+
+  <div
+    class="cards"
+    id="cards"
+  >
+
+    <div class="empty">
+      অভিযোগগুলো লোড হচ্ছে...
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= COMPLAINT FORM ================= -->
+
+<section id="complaint">
+
+  <div class="section-title">
+
+    <div>
+
+      <div class="eyebrow">
+        নিরাপদে জানান
+      </div>
+
+      <h3>
+        আপনার অভিযোগ
+      </h3>
+
+    </div>
+
+  </div>
+
+
   <div class="form-wrap">
-    <div class="notice">নিরাপত্তার জন্য ফোন নম্বর, পাসওয়ার্ড, জাতীয় পরিচয়পত্র নম্বর বা ব্যাংক/কার্ডের তথ্য দেবেন না। নামও দেওয়া বাধ্যতামূলক নয়।</div>
-    <form id="form" autocomplete="off">
+
+    <div class="notice">
+
+      নিরাপত্তার জন্য ফোন নম্বর, পাসওয়ার্ড,
+      জাতীয় পরিচয়পত্র নম্বর বা ব্যাংক/কার্ডের তথ্য দেবেন না।
+      নামও দেওয়া বাধ্যতামূলক নয়।
+
+    </div>
+
+
+    <form
+      id="form"
+      autocomplete="off"
+    >
+
+
       <div class="grid">
-        <div class="field"><label for="category">অভিযোগের ধরন *</label><select id="category" required><option value="">নির্বাচন করুন</option><option>ছিনতাই</option><option>হয়রানি</option><option>চুরি</option><option>প্রতারণা</option><option>মারামারি</option><option>অন্যান্য</option></select></div>
-        <div class="field"><label for="district">জেলা *</label><input id="district" maxlength="40" required placeholder="যেমন: ঢাকা"></div>
+
+
+        <div class="field">
+
+          <label for="category">
+            অভিযোগের ধরন *
+          </label>
+
+          <select
+            id="category"
+            required
+          >
+
+            <option value="">
+              নির্বাচন করুন
+            </option>
+
+            <option>ছিনতাই</option>
+            <option>হয়রানি</option>
+            <option>চুরি</option>
+            <option>প্রতারণা</option>
+            <option>মারামারি</option>
+            <option>অন্যান্য</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="district">
+            জেলা *
+          </label>
+
+          <input
+            id="district"
+            maxlength="40"
+            required
+            placeholder="যেমন: ঢাকা"
+          >
+
+        </div>
+
+
       </div>
-      <div class="field"><label for="title">শিরোনাম *</label><input id="title" maxlength="100" required placeholder="সংক্ষেপে সমস্যাটি লিখুন"></div>
-      <div class="field"><label for="details">বিস্তারিত *</label><textarea id="details" maxlength="1500" required placeholder="ঘটনাটি সংক্ষেপে ও পরিষ্কারভাবে লিখুন"></textarea></div>
+
+
+      <div class="field">
+
+        <label for="title">
+          শিরোনাম *
+        </label>
+
+        <input
+          id="title"
+          maxlength="100"
+          required
+          placeholder="সংক্ষেপে সমস্যাটি লিখুন"
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="details">
+          বিস্তারিত *
+        </label>
+
+        <textarea
+          id="details"
+          maxlength="1500"
+          required
+          placeholder="ঘটনাটি সংক্ষেপে ও পরিষ্কারভাবে লিখুন"
+        ></textarea>
+
+      </div>
+
+
       <div class="grid">
-        <div class="field"><label for="loss">আর্থিক ক্ষতি (টাকা) — ঐচ্ছিক</label><input id="loss" type="number" min="0" max="1000000000" step="1" inputmode="numeric" placeholder="যেমন: 5000"><div class="loss-note">ক্ষতি না হলে বা না জানাতে চাইলে খালি রাখুন।</div></div>
-        <div class="field"><label for="damaged">কি কি জিনিস নষ্ট/হারিয়েছে — ঐচ্ছিক</label><input id="damaged" maxlength="300" placeholder="যেমন: মোবাইল, ব্যাগ, কাগজপত্র"><div class="loss-note">যার ইচ্ছা সে লিখবেন, না চাইলে খালি রাখবেন।</div></div>
+
+
+        <div class="field">
+
+          <label for="loss">
+            আর্থিক ক্ষতি (টাকা) — ঐচ্ছিক
+          </label>
+
+          <input
+            id="loss"
+            type="number"
+            min="0"
+            max="1000000000"
+            step="1"
+            inputmode="numeric"
+            placeholder="যেমন: 5000"
+          >
+
+          <div class="loss-note">
+            ক্ষতি না হলে বা না জানাতে চাইলে খালি রাখুন।
+          </div>
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="damaged">
+            কি কি জিনিস নষ্ট/হারিয়েছে — ঐচ্ছিক
+          </label>
+
+          <input
+            id="damaged"
+            maxlength="300"
+            placeholder="যেমন: মোবাইল, ব্যাগ, কাগজপত্র"
+          >
+
+          <div class="loss-note">
+            যার ইচ্ছা সে লিখবেন, না চাইলে খালি রাখবেন।
+          </div>
+
+        </div>
+
+
       </div>
-      <input class="hp" id="website" tabindex="-1" autocomplete="off">
-      <button class="btn" type="submit" id="submit">অভিযোগ জমা দিন</button>
-      <div class="status" id="status"></div>
+
+
+      <!-- Honeypot -->
+
+      <input
+        class="hp"
+        id="website"
+        tabindex="-1"
+        autocomplete="off"
+      >
+
+
+      <button
+        class="btn"
+        type="submit"
+        id="submit"
+      >
+        অভিযোগ জমা দিন
+      </button>
+
+
+      <div
+        class="status"
+        id="status"
+      ></div>
+
+
     </form>
+
   </div>
+
 </section>
+
 </main>
-<footer>© আমার অভিযোগ · জনতার কথা, জনসমক্ষে</footer>
+
+
+<footer>
+  © আমার অভিযোগ · জনতার কথা, জনসমক্ষে
+</footer>
+
 
 <script>
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzUw1q7O7NP4JULKIxuJnmfwpvjRzsbU2-CeYF7pQMQ1Vehybm1k7LqSFHuzPy4BEMSgw/exec';
-const CATS = ['সব', 'ছিনতাই', 'হয়রানি', 'চুরি', 'প্রতারণা', 'মারামারি', 'অন্যান্য'];
-let selected = 'সব', data = [];
 
-function esc(s) {
-  return String(s || '').replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m]));
+/* =========================================================
+   GOOGLE APPS SCRIPT URL
+========================================================= */
+
+const SCRIPT_URL =
+'https://script.google.com/macros/s/AKfycbzUw1q7O7NP4JULKIxuJnmfwpvjRzsbU2-CeYF7pQMQ1Vehybm1k7LqSFHuzPy4BEMSgw/exec';
+
+
+/* =========================================================
+   SETTINGS
+========================================================= */
+
+const CATS = [
+  'সব',
+  'ছিনতাই',
+  'হয়রানি',
+  'চুরি',
+  'প্রতারণা',
+  'মারামারি',
+  'অন্যান্য'
+];
+
+const CACHE_KEY =
+  'amar_ovijog_cache_v3';
+
+let selected = 'সব';
+
+let data = [];
+
+let hasCache = false;
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function esc(s){
+
+  return String(s || '').replace(
+    /[&<>"']/g,
+
+    m => ({
+      '&':'&amp;',
+      '<':'&lt;',
+      '>':'&gt;',
+      '"':'&quot;',
+      "'":'&#039;'
+    }[m])
+  );
+
 }
 
-function renderFilters() {
-  const filtersEl = document.getElementById('filters');
-  if (filtersEl) {
-    filtersEl.innerHTML = CATS.map(c => 
-      `<button class="chip ${c === selected ? 'active' : ''}" onclick="selected='${c}'; renderCards(); renderFilters();">${c}</button>`
-    ).join('');
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+function bnNumber(value){
+
+  return Number(value || 0)
+    .toLocaleString('bn-BD');
+
+}
+
+
+function money(value){
+
+  const n =
+    Number(value || 0);
+
+  return '৳ ' +
+    n.toLocaleString('bn-BD');
+
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+function hideLoading(){
+
+  const loader =
+    document.getElementById(
+      'loadingOverlay'
+    );
+
+  if(loader){
+
+    loader.classList.add('hide');
+
   }
+
 }
 
-function renderCards() {
-  const list = selected === 'সব' ? data : data.filter(x => x.category === selected);
-  const el = document.getElementById('cards');
-  if (!el) return;
-  
-  if (!list.length) {
-    el.innerHTML = '<div class="empty">এখনো কোনো অভিযোগ পাওয়া যায়নি</div>';
+
+/* =========================================================
+   LIVE STATUS
+========================================================= */
+
+function setLiveStatus(
+  text,
+  live=false
+){
+
+  const el =
+    document.getElementById(
+      'liveStatus'
+    );
+
+  if(!el) return;
+
+
+  if(live){
+
+    el.innerHTML =
+      '<span class="live-dot"></span>' +
+      esc(text);
+
+  }else{
+
+    el.textContent = text;
+
+  }
+
+}
+
+
+/* =========================================================
+   CACHE SAVE
+========================================================= */
+
+function saveCache(result){
+
+  try{
+
+    const cacheData = {
+
+      items:
+        Array.isArray(result.items)
+          ? result.items
+          : [],
+
+      totalComplaints:
+        Number(
+          result.totalComplaints || 0
+        ),
+
+      totalloss:
+        Number(
+          result.totalloss || 0
+        ),
+
+      lossReports:
+        Number(
+          result.lossReports || 0
+        ),
+
+      savedAt:
+        Date.now()
+
+    };
+
+
+    localStorage.setItem(
+      CACHE_KEY,
+      JSON.stringify(cacheData)
+    );
+
+  }catch(err){
+
+    console.log(
+      'Cache save skipped'
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   CACHE LOAD
+========================================================= */
+
+function getCache(){
+
+  try{
+
+    const raw =
+      localStorage.getItem(
+        CACHE_KEY
+      );
+
+    if(!raw) return null;
+
+
+    const parsed =
+      JSON.parse(raw);
+
+
+    if(
+      !parsed ||
+      !Array.isArray(parsed.items)
+    ){
+
+      return null;
+
+    }
+
+
+    return parsed;
+
+  }catch(err){
+
+    return null;
+
+  }
+
+}
+
+
+/* =========================================================
+   APPLY RESULT
+========================================================= */
+
+function applyResult(
+  result,
+  fromCache=false
+){
+
+  if(!result) return;
+
+
+  data =
+    Array.isArray(result.items)
+      ? result.items
+      : [];
+
+
+  const tc =
+    document.getElementById(
+      'totalComplaints'
+    );
+
+  const tl =
+    document.getElementById(
+      'totalLoss'
+    );
+
+  const lr =
+    document.getElementById(
+      'lossReports'
+    );
+
+
+  const calculatedTotal =
+    data.length;
+
+
+  const calculatedLoss =
+    data.reduce(
+      (sum,item) =>
+        sum +
+        Number(item.loss || 0),
+      0
+    );
+
+
+  const calculatedLossReports =
+    data.filter(
+      item =>
+        Number(item.loss || 0) > 0
+    ).length;
+
+
+  const totalComplaints =
+    Number(result.totalComplaints) ||
+    calculatedTotal;
+
+
+  const totalLoss =
+    Number(result.totalloss) ||
+    calculatedLoss;
+
+
+  const lossReports =
+    Number(result.lossReports) ||
+    calculatedLossReports;
+
+
+  if(tc){
+
+    tc.textContent =
+      bnNumber(totalComplaints);
+
+  }
+
+
+  if(tl){
+
+    tl.textContent =
+      money(totalLoss);
+
+  }
+
+
+  if(lr){
+
+    lr.textContent =
+      bnNumber(lossReports);
+
+  }
+
+
+  renderFilters();
+
+  renderCards();
+
+  renderCategorySummary();
+
+
+  if(fromCache){
+
+    setLiveStatus(
+      'সংরক্ষিত তথ্য দেখানো হচ্ছে — সর্বশেষ তথ্য আপডেট হচ্ছে...',
+      true
+    );
+
+  }else{
+
+    setLiveStatus(
+      'সর্বশেষ তথ্য আপডেট হয়েছে',
+      true
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+function renderFilters(){
+
+  const filtersEl =
+    document.getElementById(
+      'filters'
+    );
+
+  if(!filtersEl) return;
+
+
+  filtersEl.innerHTML =
+    CATS.map(c => `
+
+      <button
+        class="chip ${c === selected ? 'active' : ''}"
+        onclick="selectCategory('${esc(c)}')"
+      >
+        ${esc(c)}
+      </button>
+
+    `).join('');
+
+}
+
+
+function selectCategory(
+  category
+){
+
+  selected = category;
+
+  renderFilters();
+
+  renderCards();
+
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+function renderCards(){
+
+  const list =
+    selected === 'সব'
+      ? data
+      : data.filter(
+          x =>
+            x.category === selected
+        );
+
+
+  const el =
+    document.getElementById(
+      'cards'
+    );
+
+  if(!el) return;
+
+
+  if(!list.length){
+
+    el.innerHTML = `
+
+      <div class="empty">
+
+        এই ধরনের কোনো অভিযোগ পাওয়া যায়নি।
+
+      </div>
+
+    `;
+
     return;
+
   }
-  el.innerHTML = list.slice(0, 30).map(x => 
-    `<article class="card"><span class="tag">${esc(x.category)}</span><h4>${esc(x.title)}</h4><p>${esc(x.details)}</p></article>`
-  ).join('');
+
+
+  el.innerHTML =
+    list.slice(0,30)
+    .map(x => {
+
+      const loss =
+        Number(x.loss || 0);
+
+
+      const damaged =
+        x.damaged
+          ? `
+
+            <div class="card-damaged">
+
+              নষ্ট/হারিয়েছে:
+              ${esc(x.damaged)}
+
+            </div>
+
+          `
+          : '';
+
+
+      const lossHTML =
+        loss > 0
+          ? `
+
+            <div class="card-loss">
+
+              💰 আর্থিক ক্ষতি:
+              ${money(loss)}
+
+            </div>
+
+          `
+          : '';
+
+
+      return `
+
+        <article class="card">
+
+          <span class="tag">
+
+            ${esc(
+              x.category ||
+              'অন্যান্য'
+            )}
+
+          </span>
+
+
+          <h4>
+
+            ${esc(x.title)}
+
+          </h4>
+
+
+          <p>
+
+            ${esc(x.details)}
+
+          </p>
+
+
+          ${lossHTML}
+
+          ${damaged}
+
+        </article>
+
+      `;
+
+    }).join('');
+
 }
 
-function load() {
-  fetch(SCRIPT_URL)
-    .then(res => res.json())
-    .then(r => {
-      const result = r && Array.isArray(r.items) ? r : { items: Array.isArray(r) ? r : [], totalComplaints: 0, totalloss: 0, lossReports: 0 };
-      data = result.items;
-      
-      const tc = document.getElementById('totalComplaints');
-      const tl = document.getElementById('totalloss');
-      const lr = document.getElementById('lossReports');
-      
-      if (tc) tc.textContent = Number(result.totalComplaints || 0).toLocaleString('bn-BD');
-      if (tl) tl.textContent = '৳ ' + Number(result.totalloss || 0).toLocaleString('bn-BD');
-      if (lr) lr.textContent = Number(result.lossReports || 0).toLocaleString('bn-BD');
-      
-      renderFilters();
-      renderCards();
-    })
-    .catch(() => {
-      data = [];
-      renderFilters();
-      const el = document.getElementById('cards');
-      if (el) el.innerHTML = '<div class="empty">ডেটা লোড করা যাচ্ছে না</div>';
+
+/* =========================================================
+   CATEGORY SUMMARY
+========================================================= */
+
+function renderCategorySummary(){
+
+  const el =
+    document.getElementById(
+      'categorySummary'
+    );
+
+  if(!el) return;
+
+
+  const stats = {};
+
+
+  CATS
+    .filter(
+      c => c !== 'সব'
+    )
+    .forEach(c => {
+
+      stats[c] = {
+        count:0,
+        loss:0
+      };
+
     });
+
+
+  data.forEach(item => {
+
+    let category =
+      String(
+        item.category ||
+        'অন্যান্য'
+      ).trim();
+
+
+    if(!stats[category]){
+
+      category = 'অন্যান্য';
+
+    }
+
+
+    stats[category].count++;
+
+
+    stats[category].loss +=
+      Number(item.loss || 0);
+
+  });
+
+
+  const total =
+    data.length;
+
+
+  if(!total){
+
+    el.innerHTML = `
+
+      <div class="empty">
+
+        এখনো কোনো অভিযোগের তথ্য পাওয়া যায়নি।
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  el.innerHTML =
+    CATS
+      .filter(
+        c => c !== 'সব'
+      )
+      .map(category => {
+
+        const count =
+          stats[category].count;
+
+
+        const loss =
+          stats[category].loss;
+
+
+        const percentage =
+          total > 0
+            ? (count / total) * 100
+            : 0;
+
+
+        const percentText =
+          percentage < 0.1
+            ? percentage.toFixed(2)
+            : percentage.toFixed(1);
+
+
+        return `
+
+          <div class="summary-card">
+
+
+            <div class="summary-top">
+
+              <span class="summary-tag">
+
+                ${esc(category)}
+
+              </span>
+
+
+              <span class="summary-percent">
+
+                ${percentText}%
+
+              </span>
+
+            </div>
+
+
+            <div class="summary-count">
+
+              মোট
+              ${bnNumber(count)}
+              টি অভিযোগ
+
+            </div>
+
+
+            <div class="progress">
+
+              <span
+                style="width:${Math.min(
+                  100,
+                  percentage
+                )}%"
+              ></span>
+
+            </div>
+
+
+            <div class="summary-loss">
+
+              মোট ক্ষতি:
+
+              <strong>
+
+                ${money(loss)}
+
+              </strong>
+
+            </div>
+
+
+          </div>
+
+        `;
+
+      }).join('');
+
 }
 
-document.getElementById('form').addEventListener('submit', e => {
-  e.preventDefault();
-  
-  const categoryEl = document.getElementById('category');
-  const districtEl = document.getElementById('district');
-  const titleEl = document.getElementById('title');
-  const detailsEl = document.getElementById('details');
-  const lossEl = document.getElementById('loss');
-  
-  const titleVal = titleEl ? titleEl.value.trim() : '';
-  const detailsVal = detailsEl ? detailsEl.value.trim() : '';
-  
-  const status = document.getElementById('status');
-  const btn = document.getElementById('submit');
 
-  if (!titleVal || !detailsVal) {
-    if (status) {
-      status.className = 'status danger';
-      status.textContent = 'অনুগ্রহ করে শিরোনাম ও বিস্তারিত জায়গায় সঠিক তথ্য লিখুন!';
+/* =========================================================
+   LIVE DATA
+========================================================= */
+
+async function fetchLiveData(){
+
+  try{
+
+    const controller =
+      new AbortController();
+
+
+    const timeout =
+      setTimeout(
+        () => controller.abort(),
+        15000
+      );
+
+
+    const response =
+      await fetch(
+        SCRIPT_URL +
+        '?t=' +
+        Date.now(),
+        {
+          method:'GET',
+          cache:'no-store',
+          signal:controller.signal
+        }
+      );
+
+
+    clearTimeout(timeout);
+
+
+    if(!response.ok){
+
+      throw new Error(
+        'Server response: ' +
+        response.status
+      );
+
     }
-    return;
+
+
+    const result =
+      await response.json();
+
+
+    const normalized = {
+
+      items:
+        result &&
+        Array.isArray(
+          result.items
+        )
+          ? result.items
+          : Array.isArray(result)
+            ? result
+            : [],
+
+
+      totalComplaints:
+        result &&
+        result.totalComplaints != null
+          ? Number(
+              result.totalComplaints
+            )
+          : undefined,
+
+
+      totalloss:
+        result &&
+        result.totalloss != null
+          ? Number(
+              result.totalloss
+            )
+          : undefined,
+
+
+      lossReports:
+        result &&
+        result.lossReports != null
+          ? Number(
+              result.lossReports
+            )
+          : undefined
+
+    };
+
+
+    saveCache(normalized);
+
+
+    applyResult(
+      normalized,
+      false
+    );
+
+
+    hideLoading();
+
+
+    hasCache = true;
+
+
+  }catch(error){
+
+    console.error(
+      'Data loading error:',
+      error
+    );
+
+
+    if(hasCache){
+
+      setLiveStatus(
+        'ইন্টারনেট/সার্ভার আপডেট করা যায়নি — সংরক্ষিত তথ্য দেখানো হচ্ছে'
+      );
+
+      hideLoading();
+
+    }else{
+
+      hideLoading();
+
+
+      setLiveStatus(
+        'তথ্য লোড করা যাচ্ছে না'
+      );
+
+
+      const cards =
+        document.getElementById(
+          'cards'
+        );
+
+      if(cards){
+
+        cards.innerHTML = `
+
+          <div class="empty">
+
+            তথ্য লোড করা যাচ্ছে না।<br>
+
+            কিছুক্ষণ পর আবার চেষ্টা করুন।
+
+          </div>
+
+        `;
+
+      }
+
+
+      const summary =
+        document.getElementById(
+          'categorySummary'
+        );
+
+      if(summary){
+
+        summary.innerHTML = `
+
+          <div class="empty">
+
+            সার্ভার থেকে তথ্য পাওয়া যায়নি।
+
+          </div>
+
+        `;
+
+      }
+
+
+      const tc =
+        document.getElementById(
+          'totalComplaints'
+        );
+
+      const tl =
+        document.getElementById(
+          'totalLoss'
+        );
+
+      const lr =
+        document.getElementById(
+          'lossReports'
+        );
+
+
+      if(tc) tc.textContent = '—';
+
+      if(tl) tl.textContent = '৳ —';
+
+      if(lr) lr.textContent = '—';
+
+    }
+
   }
 
-  if (status) {
-    status.className = 'status'; 
-    status.textContent = 'জমা হচ্ছে...';
+}
+
+
+/* =========================================================
+   INITIAL LOAD
+========================================================= */
+
+function load(){
+
+  const cached =
+    getCache();
+
+
+  if(cached){
+
+    hasCache = true;
+
+
+    applyResult(
+      cached,
+      true
+    );
+
+
+    hideLoading();
+
   }
-  if (btn) btn.disabled = true;
 
-  const payload = {
-    category: categoryEl ? categoryEl.value.trim() : '',
-    district: districtEl ? districtEl.value.trim() : '',
-    title: titleVal,
-    details: detailsVal,
-    loss: lossEl ? lossEl.value.trim() : ''
-  };
 
-  fetch(SCRIPT_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
-  })
-  .then(() => {
-    if (btn) btn.disabled = false;
-    if (status) {
-      status.className = 'status ok';
-      status.textContent = 'অভিযোগ সফলভাবে জমা হয়েছে!';
+  fetchLiveData();
+
+}
+
+
+/* =========================================================
+   FORM SUBMIT
+========================================================= */
+
+document
+  .getElementById('form')
+  .addEventListener(
+    'submit',
+    async function(e){
+
+      e.preventDefault();
+
+
+      const form =
+        e.target;
+
+
+      const categoryEl =
+        document.getElementById(
+          'category'
+        );
+
+
+      const districtEl =
+        document.getElementById(
+          'district'
+        );
+
+
+      const titleEl =
+        document.getElementById(
+          'title'
+        );
+
+
+      const detailsEl =
+        document.getElementById(
+          'details'
+        );
+
+
+      const lossEl =
+        document.getElementById(
+          'loss'
+        );
+
+
+      const damagedEl =
+        document.getElementById(
+          'damaged'
+        );
+
+
+      const honeypotEl =
+        document.getElementById(
+          'website'
+        );
+
+
+      const titleVal =
+        titleEl
+          ? titleEl.value.trim()
+          : '';
+
+
+      const detailsVal =
+        detailsEl
+          ? detailsEl.value.trim()
+          : '';
+
+
+      const status =
+        document.getElementById(
+          'status'
+        );
+
+
+      const btn =
+        document.getElementById(
+          'submit'
+        );
+
+
+      /* Honeypot */
+
+      if(
+        honeypotEl &&
+        honeypotEl.value.trim()
+      ){
+
+        return;
+
+      }
+
+
+      /* Required fields */
+
+      if(
+        !titleVal ||
+        !detailsVal
+      ){
+
+        if(status){
+
+          status.className =
+            'status danger';
+
+
+          status.textContent =
+            'অনুগ্রহ করে শিরোনাম ও বিস্তারিত জায়গায় সঠিক তথ্য লিখুন!';
+
+        }
+
+        return;
+
+      }
+
+
+      if(
+        categoryEl &&
+        !categoryEl.value.trim()
+      ){
+
+        if(status){
+
+          status.className =
+            'status danger';
+
+
+          status.textContent =
+            'অভিযোগের ধরন নির্বাচন করুন।';
+
+        }
+
+        return;
+
+      }
+
+
+      if(status){
+
+        status.className =
+          'status';
+
+
+        status.textContent =
+          'অভিযোগ জমা হচ্ছে...';
+
+      }
+
+
+      if(btn){
+
+        btn.disabled = true;
+
+        btn.textContent =
+          'জমা হচ্ছে...';
+
+      }
+
+
+      const payload = {
+
+        category:
+          categoryEl
+            ? categoryEl.value.trim()
+            : '',
+
+
+        district:
+          districtEl
+            ? districtEl.value.trim()
+            : '',
+
+
+        title:
+          titleVal,
+
+
+        details:
+          detailsVal,
+
+
+        loss:
+          lossEl
+            ? lossEl.value.trim()
+            : '',
+
+
+        damaged:
+          damagedEl
+            ? damagedEl.value.trim()
+            : ''
+
+      };
+
+
+      try{
+
+        await fetch(
+          SCRIPT_URL,
+          {
+            method:'POST',
+            mode:'no-cors',
+            headers:{
+              'Content-Type':
+                'application/json'
+            },
+            body:
+              JSON.stringify(payload)
+          }
+        );
+
+
+        if(status){
+
+          status.className =
+            'status ok';
+
+
+          status.textContent =
+            'অভিযোগ সফলভাবে জমা হয়েছে!';
+
+        }
+
+
+        form.reset();
+
+
+        setTimeout(
+          () => {
+
+            fetchLiveData();
+
+          },
+          1200
+        );
+
+
+      }catch(error){
+
+        console.error(
+          'Submit error:',
+          error
+        );
+
+
+        if(status){
+
+          status.className =
+            'status danger';
+
+
+          status.textContent =
+            'সার্ভারে সমস্যা হয়েছে! আবার চেষ্টা করুন।';
+
+        }
+
+      }finally{
+
+        if(btn){
+
+          btn.disabled = false;
+
+          btn.textContent =
+            'অভিযোগ জমা দিন';
+
+        }
+
+      }
+
     }
-    e.target.reset();
-    load();
-  })
-  .catch(() => {
-    if (btn) btn.disabled = false;
-    if (status) {
-      status.className = 'status danger';
-      status.textContent = 'সার্ভারে সমস্যা হয়েছে! আবার চেষ্টা করুন।';
-    }
-  });
-});
+  );
 
-window.addEventListener('load', load);
+
+/* =========================================================
+   START
+========================================================= */
+
+window.addEventListener(
+  'load',
+  load
+);
+
 </script>
+
 </body>
 </html>
